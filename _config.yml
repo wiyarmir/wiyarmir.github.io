@@ -1,0 +1,43 @@
+# Site settings
+title: wiyarmir.es
+description: I will end up having to look online for this anyway...
+email: wiyarmir@gmail.com
+url: "http://wiyarmir.es" # the base hostname & protocol for your site
+#favicon
+favicon: /favicon.png
+
+#feed
+#feedburner_username:
+#twitter
+twitter_username: wiyarmir
+github_username:  wiyarmir
+
+#linkedin
+linkedin_username: guillermoorellana
+
+#google analytics
+google_analytics_id : UA-12389445-1
+#gplus
+gplus_username: GuillermoOrellanaRuiz
+
+#fb_username
+fb_username: guillermoorellanaruiz
+
+#permalink /blog/2014/11/11/this-is-a-sample-post
+permalink: /blog/:year/:month/:day/:title
+# Build settings
+markdown: kramdown
+
+#Disqus configuration
+#disqus_short_name:
+#disqus_show_comment_count: true
+
+#Can be used for multiple author blogs ! Add name to post For more visit the sample
+authors:
+  wiyarmir:
+    display_name: Guillermo Orellana
+    email: wiyarmir@gmail.com
+    fb: pranav.guillermoorellanaruiz
+    linkedin: guillermoorellana
+    twitter: wiyarmir
+    github: wiyarmir
