@@ -26,7 +26,7 @@ fb_username: guillermoorellanaruiz
 #permalink /blog/2014/11/11/this-is-a-sample-post
 permalink: /blog/:year/:month/:day/:title
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 
 #Disqus configuration
 #disqus_short_name:
