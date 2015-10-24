@@ -10,7 +10,7 @@ favicon: /favicon.png
 #feedburner_username:
 #twitter
 twitter_username: wiyarmir
-github_username:  wiyarmir
+github_username: wiyarmir
 
 #linkedin
 linkedin_username: guillermoorellana
@@ -20,24 +20,21 @@ google_analytics_id : UA-12389445-1
 #gplus
 gplus_username: GuillermoOrellanaRuiz
 
-#fb_username
-fb_username: guillermoorellanaruiz
-
 #permalink /blog/2014/11/11/this-is-a-sample-post
 permalink: /blog/:year/:month/:day/:title
+
 # Build settings
 markdown: redcarpet
 
 #Disqus configuration
-#disqus_short_name:
-#disqus_show_comment_count: true
+disqus_short_name: wiyarmir
+disqus_show_comment_count: true
 
 #Can be used for multiple author blogs ! Add name to post For more visit the sample
 authors:
   wiyarmir:
     display_name: Guillermo Orellana
     email: wiyarmir@gmail.com
-    fb: pranav.guillermoorellanaruiz
     linkedin: guillermoorellana
     twitter: wiyarmir
     github: wiyarmir
