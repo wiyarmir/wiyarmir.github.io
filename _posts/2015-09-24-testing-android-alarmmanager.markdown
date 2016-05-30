@@ -3,7 +3,7 @@ layout: post
 title:  "Testing Android's AlarmManager"
 date:   2015-09-24 10:41:06 +00:00
 categories: android,testing
-author: wiyarmir
+author: Guillermo Orellana
 comments: true
 ---
 

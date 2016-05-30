@@ -1,40 +1,68 @@
+# Build settings
+gems:
+  - jemoji
+  - jekyll-paginate
+  - redcarpet
+
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 # Site settings
-title: wiyarmir.es
-description: I will end up having to look online for this anyway...
+title: Guillermo Orellana
+description: I promise this time I will update it regularly...
 email: wiyarmir@gmail.com
-url: "http://wiyarmir.es" # the base hostname & protocol for your site
 #favicon
 favicon: /favicon.png
 
-#feed
-#feedburner_username:
-#twitter
-twitter_username: wiyarmir
-github_username: wiyarmir
+email: guillermo.orellana.ruiz@gmail.com
+#blog logo
+logo: "/assets/images/df_logo.png"
+# blog cover
+cover: "/assets/images/oldstreet.jpg"
 
-#linkedin
-linkedin_username: guillermoorellana
+name: 'Guillermo Orellana'
+author: 'Guillermo Orellana'
+author_image: "/assets/images/author.jpg"
 
-#google analytics
-google_analytics_id : UA-12389445-1
-#gplus
-gplus_username: GuillermoOrellanaRuiz
+paginate:	5
 
-#permalink /blog/2014/11/11/this-is-a-sample-post
-permalink: /blog/:year/:month/:day/:title
+url: "http://guillermoorellana.es" # the base hostname & protocol for your site
+baseurl: ""
+#used to display twitter cards
+twitter_handle: '@wiyarmir'
 
-# Build settings
-markdown: redcarpet
+#fill in disqus shortname to use disqus
+disqus: wiyarmir
 
-#Disqus configuration
-disqus_short_name: wiyarmir
-disqus_show_comment_count: true
+# social icons and sharing options
+social:
+  - icon:	twitter
+    url:	https://twitter.com/wiyarmir
+    desc: Follow me on twitter
+    share_url: http://twitter.com/share
+    share_title: ?text=
+    share_link: "&amp;url="
 
-#Can be used for multiple author blogs ! Add name to post For more visit the sample
-authors:
-  wiyarmir:
-    display_name: Guillermo Orellana
-    email: wiyarmir@gmail.com
-    linkedin: guillermoorellana
-    twitter: wiyarmir
-    github: wiyarmir
+#  - icon:	facebook
+#    url:	https://facebook.com/???
+#    desc: Connect with me facebook
+#    share_url: https://www.facebook.com/sharer.php
+#    share_title: ?t=
+#    share_link: "&amp;u="
+
+  - icon:	github
+    url:	https://github.com/wiyarmir
+    desc:	Fork me on github
+    share_url:
+    share_title:
+    share_link:
+
+#  - icon:	google-plus
+#    url:	https://google.com/???
+#    desc:	Add me on google+
+#    share_url:
+#    share_title:
+#    share_link:
