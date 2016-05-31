@@ -2,12 +2,17 @@
 layout: post
 title:  "Testing Android's AlarmManager"
 date:   2015-09-24 10:41:06 +00:00
-categories: android,testing
+categories: android
 author: Guillermo Orellana
 comments: true
+tags: android
+image: /assets/article_images/2015-09-24-testing-android-alarmmanager/clock.jpg
 ---
+I had to maintain and extend an existing Android application, which I did not really understand deep enough to feel safe
+to make big changes that it needed. So I decided to put some scaffolding around in shape of tests, in case everything
+decided to fall down. One of the parts I found most difficult to deal with, was Android's AlarmManager related code.
 
-## What is AlarmManager?
+# What is AlarmManager?
 
 AlarmManager is an old friend. It has been available in the Android API literally forever,
 starting Android 1.0 (API Level 1)
@@ -22,7 +27,7 @@ AlarmManager is a system service, thus you need a Context to instantiate it from
 AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 ```
 
-## How to use alarms in Android?
+# How to use alarms in Android?
 
 Simple! You create a `PendingIntent` for your favourite service, activity or broadcast and pass it
 to the `AlarmManager` instance through the appropriate method. In this example I used `setInexactRepeating`
@@ -44,7 +49,7 @@ will) be deferred under OS discretion with the purpose of saving battery. This i
 is compiled against KitKat or higher, you cannot rely on the accuracy of any method which is not
 `setWindow` or `setExact`.
 
-## How to test alarms in Android?
+# How to test alarms in Android?
 
 Such a nice system functionality. You create the alarm, set it up and forget about it. Err but...
 How to test it?
@@ -53,7 +58,7 @@ Nowadays Robolectric is a de-facto standard in Android unit testing. However, fo
 decided to make my tests instrumentation tests, since it is a functionality that relies heavily on
  Android System features. I might rewrite it for Robolectric when 3.1 is out.
 
-### How to check if an alarm is set?
+## How to check if an alarm is set?
 
 The only access to system alarms in Android is some nasty adb command that dumps the whole system status.
 That does not sound right, does it? But don't panic. As [this StackOverflow question]
@@ -82,7 +87,7 @@ This is, must have same action, data, type, class and categories. Any extra data
 you need to call the same getter, e.g. if you created it calling `getService`, you must use it for
 the check as well.
 
-### What could I test?
+## What could I test?
 
 Well, you will want to test that your alarm is actually set when you want it to be.
 
@@ -120,7 +125,7 @@ public void testCancelAlarm_set() throws Exception {
 }
 ```
 
-### Help! All my cancel-related tests are red!
+## Help! All my cancel-related tests are red!
 
 Be careful here. For these tests to work, you have to cancel **both** the alarm and the pending intent.
 
@@ -135,7 +140,7 @@ public void cancelAlarm(Context context) {
 }
 ```
 
-### Clean up before you leave!
+## Clean up before you leave!
 
 Have you ever heard of the [Boy Scouts' rule](http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule)?
 Well, in tests it is quite important to clean up your mess!
@@ -152,7 +157,7 @@ public void tearDown() {
 Make sure you cancel any alarm that might have not been cancelled already by the end of the test.
 Uncle Bob would be proud!
 
-## Further testing
+# Further testing
 
 That should be it for alarm setting and cancelling. But there are many many more things we can test!
 For instance, enforcing that we only set up one alarm at the time, that the alarm gets the right
