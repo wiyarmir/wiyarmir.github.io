@@ -5,6 +5,8 @@ gems:
   - redcarpet
 
 markdown: redcarpet
+redcarpet:
+  extensions: ["strikethrough"]
 
 # Site settings
 title: Guillermo Orellana
