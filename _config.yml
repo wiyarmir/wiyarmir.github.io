@@ -2,11 +2,13 @@
 gems:
   - jemoji
   - jekyll-paginate
-  - redcarpet
 
-markdown: redcarpet
-redcarpet:
-  extensions: ["strikethrough"]
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
 
 # Site settings
 title: Guillermo Orellana
