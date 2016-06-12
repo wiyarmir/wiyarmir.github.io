@@ -20,7 +20,7 @@ You can find all about it in the [project page]().
 
 If you generate a demo project by invoking `react-native init`, you will get a working skeleton, which is the one I will base the post on.
 
-![]()
+![Way prettier than your usual Hello World!](/assets/article_images/2016-06-11-writing-android-component-for-react-native/sample.png)
 
 Let's attempt to extend it by adding a simple `ProgressBar`. This is already implemented as part of the standard React Native distribution, but will serve us as a easy sample.
 
@@ -99,9 +99,36 @@ protected List<ReactPackage> getPackages() {
 
 # JavaScript (React) side
 
+This step is quite simple, since most of it is handled by the React and React Native code. The only thing left for us to do is to describe the `propTypes` and export the module.
 
+```js
+'use strict';
+import { 
+  NativeModules, 
+  requireNativeComponent, 
+  View 
+} from 'react-native';
+
+var iface = {
+  name: 'ProgressBar',
+  propTypes: {
+    ...View.propTypes // include the default view properties
+  },
+};
+
+var ProgressBar = requireNativeComponent('ProgressBar', iface);
+
+export default ProgressBar;
+```
+
+You might be wondering what are those default view properties. Since we inherited `SimpleViewManager` (which extends `BaseViewManager`) when creating our own ViewManager, we can take advantage of that to have all the basic mappings from CSS to View properties solved for us. Those include properties such as `opacity`, `backgroundColor` and `flex`. Full list available [here](https://facebook.github.io/react-native/docs/view.html).
+
+What if we want to expose our own? Well...
 
 # Exposing view properties
+
+In the Java side, we need to create our setters in the ViewManager implementation and annotate them with `@ReactProp`. There we note the name of the property coming from JSX world, and optionally we can define a default value.
+
 ```java
 @ReactProp(name = "progress", defaultInt = 0)
 public void setProgress(ProgressBar view, int progress) {
@@ -116,7 +143,38 @@ public void setIndeterminate(ProgressBar view,
 }
 ```
 
+This setter will be called every time the property of our React component is updated. In case of the property being removed, then the default value is used.
+
+On our module's iface, we need to describe the properties we exposed in the ViewManager, both with name and type.
+
+```js
+import { PropTypes } from 'react';
+var iface = {
+  name: 'ProgressBar',
+  propTypes: {
+    progress: PropTypes.number,
+    indeterminate: PropTypes.bool,
+    ...View.propTypes // include the default view properties
+  },
+};
+```
+
 # All together
+
+Kickstart the `react-native` server, deploy the APK to your favourite emulator or real device, and if nothing is missing the million gear machine will produce something that looks more or less like this.
+
+![I swear it's spinning, but I was too lazy to record a GIF](/assets/article_images/2016-06-11-writing-android-component-for-react-native/final.png)
 
 # Aftermath
 
+React Native, more than a year after its public release (and not even one after the Android release), is in a way more mature state than the last time I attempted anything on it. You can have a working boilerplate project with one command. Docs are very helpful and community content is great.
+
+However, it still feels very cumbersome to integrate it with complex modules. 
+
+There is, nevertheless, an alternative approach. Instead of having a brand new React Native application adopt native components, there is the possibility of doing the complete opposite - having a mature production application integrate one simple React Native component. 
+
+From reading the docs, it looks more complicated than it sounds, and I have some concerns about build process, speed and reliability. But that's food for another thought, and most likely another post. Stay tuned!
+
+# Links
+
+[GitHub repo with the final code](https://github.com/wiyarmir/React-Native-Android-component-example)
