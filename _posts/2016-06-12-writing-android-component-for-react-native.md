@@ -20,7 +20,7 @@ You can find all about it in the [project page](http://facebook.github.io/react-
 
 If you generate a demo project by invoking `react-native init`, you will get a working skeleton, which is the one I will base the post on.
 
-![Way prettier than your usual Hello World!](/assets/article_images/2016-06-12-11-writing-android-component-for-react-native/sample.png)
+![Way prettier than your usual Hello World!](/assets/article_images/2016-06-12-writing-android-component-for-react-native/sample.png)
 
 Let's attempt to extend it by adding a simple `ProgressBar`. This is already implemented as part of the standard React Native distribution, but will serve us as an easy sample.
 
