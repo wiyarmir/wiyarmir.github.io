@@ -16,7 +16,7 @@ Main concerns that came to our mind were the size of the existing codebase (let'
 
 Probably almost everybody has already heard about React Native, but if you have not, **TLDR:** it makes use of JavaScript and React but builds a native UI thanks to some clever bridge techniques.
 
-You can find all about it in the [project page]().
+You can find all about it in the [project page](http://facebook.github.io/react-native/).
 
 If you generate a demo project by invoking `react-native init`, you will get a working skeleton, which is the one I will base the post on.
 
