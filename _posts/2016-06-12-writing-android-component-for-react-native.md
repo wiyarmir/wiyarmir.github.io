@@ -145,10 +145,31 @@ public void setIndeterminate(ProgressBar view,
 
 This setter will be called every time the property of our React component is updated. In case of the property being removed, then the default value is used.
 
-On our module's iface, we need to describe the properties we exposed in the ViewManager, both with name and type.
+Then, we need to add it to the React Native interface. Back in the js file, at our module's iface we should describe the properties we exposed in the ViewManager, both with name and type.
 
 ```js
+var iface = {
+  // ...
+  propTypes: {
+    progress: PropTypes.number,
+    indeterminate: PropTypes.bool,
+  },
+  // ...
+};
+```
+
+This way, both native and React sides will speak in the same terms. In the end, our module's JS file would look something like this:
+
+```js
+'use strict';
+
 import { PropTypes } from 'react';
+import { 
+  NativeModules, 
+  requireNativeComponent, 
+  View 
+} from 'react-native';
+
 var iface = {
   name: 'ProgressBar',
   propTypes: {
@@ -157,6 +178,10 @@ var iface = {
     ...View.propTypes // include the default view properties
   },
 };
+
+var ProgressBar = requireNativeComponent('ProgressBar', iface);
+
+export default ProgressBar;
 ```
 
 # All together
