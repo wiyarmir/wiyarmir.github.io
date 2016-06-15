@@ -5,7 +5,7 @@ date: 2016-06-12 15:37:40 +00:00
 categories: react-native
 author: Guillermo Orellana
 comments: true
-tags: react-native,google
+tags: react-native,android
 ---
 
 One of the cool things I like from working at Badoo ([we are hiring!](https://corp.badoo.com/jobs/)), is that we are free to propose, test and promote new or different techniques, technologies and libraries. React Native has been the buzzword for a while now, but it has recently gained our attention.
