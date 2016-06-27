@@ -112,3 +112,19 @@ if (Build.VERSION.SDK_INT >= >= Build.VERSION_CODES.M) {
     }
 }
 ```
+
+## android.content.ActivityNotFoundException
+
+So, if you are debugging in a real device and not bundling the JS file, you can shake the phone in order to acces the debug menu and...
+
+![Thanks for the heads up, logcat](activitynotfound.png)
+
+Seriously? AGH!
+
+### Solution
+
+Throw this into your `<application>` tag, as our friendly exception suggests. Yep, as simple as that.
+
+```xml
+<activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+```
