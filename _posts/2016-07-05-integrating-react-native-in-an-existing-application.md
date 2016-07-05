@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Integrating React Native in an existing application"
-date: 2016-07-05 22:37:40 +00:00
+date: 2016-07-05 22:37:40 +01:00
 categories: react-native
 author: Guillermo Orellana
 comments: true
