@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Integrating React Native in an existing application"
-date: 2016-06-28 15:37:40 +00:00
+date: 2016-07-05 22:37:40 +00:00
 categories: react-native
 author: Guillermo Orellana
 comments: true
@@ -108,11 +108,15 @@ The snippets for `index.android.js` and `package.json` seem fine for now at leas
 
 So you try to run it but...
 
+# Troubleshooting time
+
+These are the problems I found, but as always, YMMV.
+
 ## java.lang.UnsatisfiedLinkError: could find DSO to load: libreactnativejni.so
 
 Uh Oh! This sounds scary! What happened here? Well, I decided to test it on a Samsung Galaxy S7 (running Marshmallow, that also will be important in a second or two)... Which happens to be a 64 bit phone. And React Native [does not provide a 64bit version of its binary](https://github.com/facebook/react-native/issues/2814). Usually Android would do a fallback, but this does not happen if you have a 64bit dependency in theory, but in practice I found it happening in a blank modern project.
 
-[![Uh-oh](/assets/article_images/2016-06-28-integrating-react-native-in-an-existing-application/linking-error.png)](/assets/article_images/2016-06-28-integrating-react-native-in-an-existing-application/linking-error.png)
+[![Uh-oh](/assets/article_images/2016-07-05-integrating-react-native-in-an-existing-application/linking-error.png)](/assets/article_images/2016-07-05-integrating-react-native-in-an-existing-application/linking-error.png)
 
 ### Solution
 
@@ -126,7 +130,7 @@ ndk {
 
 Did I mention it's a *deprecated* API? Android Gradle Plugin will not like it. Just do as the warning says and add `android.useDeprecatedNdk=true` in your local `gradle.properties`.
 
-![Ugh](/assets/article_images/2016-06-28-integrating-react-native-in-an-existing-application/deprecated.png)
+![Ugh](/assets/article_images/2016-07-05-integrating-react-native-in-an-existing-application/deprecated.png)
 
 So you hit the "Run" button again and...
 
@@ -138,7 +142,7 @@ One very cool thing about Android Marshmallow is its new permission system, whic
 
 One very **not cool** thing about our empty app is that we do not request permission to draw over apps, but React Native will attempt to use it anyway, resulting on this beautiful stacktrace.
 
-![Unexpected exception](/assets/article_images/2016-06-28-integrating-react-native-in-an-existing-application/badtokenexception.png)
+![Unexpected exception](/assets/article_images/2016-07-05-integrating-react-native-in-an-existing-application/badtokenexception.png)
 
 ### Solution
 
@@ -164,7 +168,7 @@ compile "com.facebook.react:react-native:+"  // From node_modules
 
 So then I tried to change it to match the version I stated in my `package.json` file, but hey, this is interesting!
 
-![Le what?!?](/assets/article_images/2016-06-28-integrating-react-native-in-an-existing-application/mavenerror.png)
+![Le what?!?](/assets/article_images/2016-07-05-integrating-react-native-in-an-existing-application/mavenerror.png)
 
 Digging a bit deeper, found out that *the plus coordinates were pulling an outdated artefact from Maven Central*. Digging even deeper, I found out my local Maven repo to be wrong.
 
@@ -195,7 +199,7 @@ Since `$projectDir` is referencing the `app/` subdirectory. D'oh! 🙈
 
 So, if you are debugging in a real device and not bundling the JS file, you can shake the phone in order to access the debug menu and...
 
-[![Thanks for the heads up, logcat](/assets/article_images/2016-06-28-integrating-react-native-in-an-existing-application/activitynotfound.png)](/assets/article_images/2016-06-28-integrating-react-native-in-an-existing-application/activitynotfound.png)
+[![Thanks for the heads up, logcat](/assets/article_images/2016-07-05-integrating-react-native-in-an-existing-application/activitynotfound.png)](/assets/article_images/2016-07-05-integrating-react-native-in-an-existing-application/activitynotfound.png)
 
 Seriously? AGH!
 
@@ -208,10 +212,16 @@ Throw this into your `<application>` tag, as our friendly exception suggests. Ye
     android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 ```
 
-# Result
+# Result and conclusions
 
-After all these bumps and efforts, we finally got an `Activity` to launch 
+After all these bumps and efforts, we finally got an `Activity` to launch. Phew! What a long way! It was definitely not a bed of roses, and some issues did not appear to have an obvious fix after a quick Google search - but hey, maybe that's just me being bad 🙈
 
+![Hi! You took a long time to appear!](/assets/article_images/2016-07-05-integrating-react-native-in-an-existing-application/result.png)
 
-![](/assets/article_images/2016-06-28-integrating-react-native-in-an-existing-application/result.png)
+And this is not the end of the road. You will still have to integrate the React Native toolchain into your build process (there is a nice Gradle plugin helping with that I believe) which adds complexity and build time.
+
+On the other hand, is a fair enough way of experimenting on an already existing application without taking the risks that a complete rewrite brings.
+
+But this was too simple, what about interactions between both sides? I guess I already have topic for the next React Native themed article... 🤔
+
 
