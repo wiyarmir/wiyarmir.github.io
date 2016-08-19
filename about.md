@@ -8,7 +8,7 @@ permalink: /about/
 
 I am a Telecommunications Technical Engineer (having received honours in [my thesis](#)).
 I currently live in London, United Kingdom. At the moment I work as an Android Developer in [Badoo](https://corp.badoo.com).
-They are cool guys, check them out!
+They are cool guys, check them out! I have previously worked at [Coniq](http://coniq.com/) in London, and at Credit Suisse in Wrocław, Poland.
 
 # What are you focused in?
 
@@ -19,9 +19,7 @@ My main focus is mobile technology, since I believe it is not the future but the
 I enjoy experimenting different approaches for it, including multitarget compilation with [Haxe](http://haxe.org/),
 or hybrid approaches with custom frameworks.
 
-As a secondary consequence, or perhaps part of the main focus, I do play around concepts like wereables or internet of things (IoT).
-
-I do also enjoy creating some small games, mostly for mobile platforms, mostly all of them unfinished due to lack of time (whoops).
+As a consequence, or perhaps part of the main focus, I do play around concepts like wereables or internet of things (IoT).
 
 # Do you even have free time?
 
