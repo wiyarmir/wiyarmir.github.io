@@ -8,7 +8,16 @@ comments: true
 tags: android,lombok,clean
 ---
 
-(Intro)
+Looks like nowadays, clean is the trend. Clean eating, clean lifting, clean architecture...
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="es" dir="ltr">Todas las charlas que menciona Clean Architecture <a href="https://twitter.com/hashtag/CleanHype?src=hash">#CleanHype</a> <a href="https://twitter.com/hashtag/DroidconMAD?src=hash">#DroidconMAD</a> <a href="https://t.co/gvr1yMqj8o">pic.twitter.com/gvr1yMqj8o</a></p>— Antonio López Marín (@tonilopezmr) <a href="https://twitter.com/tonilopezmr/status/754348235150491649">July 16, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+# The pain
+
+
 
 # Project Lombok
 
