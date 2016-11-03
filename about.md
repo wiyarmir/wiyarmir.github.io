@@ -6,7 +6,7 @@ permalink: /about/
 
 # Who are you anyway?
 
-I am a Telecommunications Technical Engineer (having received honours in [my thesis](#)). I currently live in London, United Kingdom. At the moment I work as an Android Developer in [Badoo](https://corp.badoo.com). They are cool guys, check them out! I have previously worked at [Coniq](http://coniq.com/) in London, and at Credit Suisse in Wrocław, Poland.
+I am Guillermo, and I was born in Lucena, Spain. I have a Bachelor's Degree in Telecommunications (having received honours in [my thesis](#)). I currently live in London, United Kingdom. At the moment I work as an Android Developer in [Badoo](https://corp.badoo.com). They are cool guys, check them out! I have previously worked at [Coniq](http://coniq.com/) in London, and at Credit Suisse in Wrocław, Poland.
 
 # What are you focused in?
 
