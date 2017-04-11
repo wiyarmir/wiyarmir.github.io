@@ -8,11 +8,13 @@ comments: true
 tags: react-native,android
 ---
 
+***Updated 11/04/2017:* Added some of the API changes and updated the React Native version used in the article**
+
 As I promised by the end of my previous article, ["Writing an Android component for React Native"](https://guillermoorellana.es/react-native/2016/06/12/writing-android-component-for-react-native.html), here is the second approach for React Native and native Android code to live together ~~in peace and harmony~~ and not blow apart. Since this is a follow-up to the previous article, I will jump straight into matter. If you need a brief introduction on React Native and how it's organised on Android side, please visit the aforementioned link.
 
 # Getting it to work
 
-After [following the docs sample](https://facebook.github.io/react-native/docs/embedded-app-android.html), you copy the snippets, run the commands... Et Voilá! Well... Not really. Actually the docs do not reflect the current state of the API, which is v0.27.2 when I wrote this paragraph. I will try to expose my issues and the ways I worked around them, but YMMV.
+After [following the docs sample](https://facebook.github.io/react-native/docs/embedded-app-android.html), you copy the snippets, run the commands... Et Voilá! Well... Not really. Actually the docs do not reflect the current state of the API, which is v0.42.3 when I ~wrote~ updated this paragraph. I will try to expose my issues and the ways I worked around them, but YMMV.
 
 An slightly updated version of the activity showing the React Native content would look like this:
 
@@ -82,7 +84,7 @@ public class ReactActivity extends AppCompatActivity
     public void onActivityResult(int requestCode, int resultCode, 
                                  Intent data) {
         if (mReactInstanceManager != null) {
-            mReactInstanceManager.onActivityResult(requestCode, 
+            mReactInstanceManager.onActivityResult(this, requestCode, 
                 resultCode, data);
         }
     }
@@ -131,6 +133,20 @@ ndk {
 Did I mention it's a *deprecated* API? Android Gradle Plugin will not like it. Just do as the warning says and add `android.useDeprecatedNdk=true` in your local `gradle.properties`.
 
 ![Ugh](/assets/article_images/2016-07-05-integrating-react-native-in-an-existing-application/deprecated.png)
+
+### Better solution
+
+There is a better (and not deprecated) way of doing this:
+
+```groovy
+packagingOptions {
+    exclude '/lib/mips64/**'
+    exclude '/lib/arm64-v8a/**'
+    exclude '/lib/x86_64/**'
+}
+```
+
+This way you ensure you get rid of the unsupported ABIs, instead of explicitly supporting a few.
 
 So you hit the "Run" button again and...
 
@@ -186,7 +202,7 @@ To this
 
 ```groovy
 maven {
-    url "$projectDir/../node_modules/react-native/android"
+    url "$projectRoot/node_modules/react-native/android"
 }
 ```
 
@@ -224,4 +240,5 @@ On the other hand, is a fair enough way of experimenting on an already existing 
 
 But this was too simple, what about interactions between both sides? I guess I already have topic for the next React Native themed article... 🤔
 
+As always, [code available in GitHub](https://github.com/wiyarmir/React-Native-Android-integration-example).
 
