@@ -67,3 +67,6 @@ social:
     share_url:
     share_title:
     share_link:
+
+include:
+  - .well-known

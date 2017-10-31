@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "es.guillermoorellana.app",
+      "sha256_cert_fingerprints": [
+        "F2:6E:34:78:1D:33:BE:10:70:24:F7:E5:8E:A2:8C:07:09:7A:0A:3B:03:E8:B2:FD:FE:16:E4:57:46:C6:18:9B"
+      ]
+    }
+  }
+]
