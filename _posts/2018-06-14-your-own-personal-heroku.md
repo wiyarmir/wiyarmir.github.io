@@ -23,7 +23,7 @@ At the end of the day, your Kotlin server code is just a JAR file. You could use
 $ git push herkou master
 ```
 
-Is priceless. Well actuall no, there are some limitations on what you can get from Heroku for free. Your service will have some hours of runtime allowed, then capped unless paid. That's fair enough, but what if you want the flexibility of deploying from git commands, and you already have a spare server from, say, a weird Black Friday shopping rampage? (True story, by the way)
+It's priceless. Actually no, there are some limitations on what you can get from Heroku for free. Your service will have some hours of runtime allowed, then capped unless you switch to the paid tier. That's fair enough, but what if you want the flexibility of deploying from git commands, and you already have a spare server from, say, a weird Black Friday shopping rampage? (True story, by the way)
 
 ## Enter Dokku and Heroku(ish)
 
@@ -33,11 +33,11 @@ There are two tools that take part in that: [herokuish](https://github.com/glide
 
 ## That's a lot of DevOps jargon, show me how to do it
 
-Well, nobody is going to be able to teach you how to get Dokku up better [than their own docs](http://dokku.viewdocs.io/dokku/) (and those won't go out of date as quick as this article.
+Nobody is going to be able to teach you how to get Dokku up better [than their own docs](http://dokku.viewdocs.io/dokku/) (and those won't go out of date as quick as this article).
 
 # Preparing our code to run on Heroku(ish)
 
-Even if I did go for Dokku, everything here applies to a Heroku deployment as well. I will be basing my examples on code written using [Ktor](http://ktor.io), using other frameworks for some of the techniques may work, but your mileage may vary.
+Even if I did go for Dokku, everything here applies to a Heroku deployment as well. I will be basing my examples on code written using [Ktor](http://ktor.io). Other frameworks for some of the techniques may work, but your mileage may vary.
 
 Remember what I mentioned at the beginning, our code is bundled into just a JAR file. In theory, we could just run `java -jar server.jar`. However, doing that will point out one thing: regular JAR files don't really carry their dependencies over.
 
@@ -62,15 +62,15 @@ task releaseJar(type: ShadowJar) {
 }
 ```
 
-Since I did create another task, I had to re-define what my main class is, so the JAR file can be run from the terminal. Not necessary if you are just using the output of the `shadowJar` task, it will pick whatever [the `application` plugin](https://docs.gradle.org/current/userguide/application_plugin.html) says.
+Since had a new task created, I had to define where my main class is. This way, the JAR file can be run from the terminal. This is not necessary if you are just using the output of the `shadowJar` task, it will pick whatever [the `application` plugin](https://docs.gradle.org/current/userguide/application_plugin.html) says.
 
-Note that the property `classifier` is what will be appended to your JAR file name, so in this case I would have `backend-0.0.1-release.jar` generated. Take a moment and test that running that JAR file runs your server.
+Note that the property `classifier` is what will be appended to your JAR file name, so in this case a file with the name `backend-0.0.1-release.jar` will be generated. Now, take a moment to test that, when running the JAR file, your server spins up.
 
 ## IKEA instructions, but for your PaaS
 
 Now we are able to build a shadow JAR that contains our dependencies, but is our service able to do so? Unless we want to commit our build output (please don't), we will have to tell our service how to reach that goal state.
 
-According to [the official Heroku docs](https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku#overview) (and Herokuish follows them as expected), when it detects a Gradle project it will attempt to invoke one command for building it:
+According to [the official Heroku docs](https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku#overview) (and Herokuish follows them as expected), when it detects a Gradle project, Heroku will attempt invoke one command:
 
 ```bash
 $ ./gradlew stage
@@ -123,8 +123,10 @@ $ dokku letsencrypt keynotedex
 
 # Final thoughts
 
-The Heroku style of deployment has made publishing a backend service as easy as deploying an APK into an Android phone. This is great, because it makes backend less scary and confusing.
+The Heroku style of deployment has made publishing a backend service as easy as deploying an APK into an Android phone. This is great because makes backend less scary and confusing.
 
 In addition, Dokku allows you to have full control over the system, and use it in environments where you would not be allowed to put things into a public cloud.
 
 This should not be thought as exclusive for human-triggered deployments, as this simplification will surely make systems for deploy-on-merge way simpler. 
+
+Thanks to [Jose A. Corbacho](https://twitter.com/corbyjerez) for taking the time to review this article.
