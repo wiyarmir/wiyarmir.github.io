@@ -7,9 +7,6 @@ author: wiyarmir
 comments: true
 ---
 
-
-Hello! No, I did not abandon this blog - I just neglected it slightly.
-
 # What was going on during all of this time?
 
 ## Worked in creating a new app
