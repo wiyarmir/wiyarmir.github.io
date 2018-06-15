@@ -129,4 +129,6 @@ In addition, Dokku allows you to have full control over the system, and use it i
 
 This should not be thought as exclusive for human-triggered deployments, as this simplification will surely make systems for deploy-on-merge way simpler. 
 
-Thanks to [Jose A. Corbacho](https://twitter.com/corbyjerez) for taking the time to review this article.
+<hr />
+
+Thanks to [Jose A. Corbacho](https://twitter.com/corbyjerez) and [Pablo Guardiola](https://twitter.com/Guardiola31337) for taking the time to review this article.
