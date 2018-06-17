@@ -6,7 +6,7 @@ permalink: /about/
 
 # Who are you anyway?
 
-I am Guillermo, and I was born in Lucena, Spain. I have a Bachelor's Degree in Telecommunications (having received honours in [my thesis](#)). I currently live in London, United Kingdom. At the moment I work as an Senior Software Engineer in [Skyscanner](#). I have previously worked at [Badoo](https://corp.badoo.com) and [Coniq](http://coniq.com/) in London, and at Credit Suisse in Wrocław, Poland.
+I am Guillermo, and I was born in Lucena, Spain. I have a Bachelor's Degree in Telecommunications (having received honours in [my thesis](https://github.com/wiyarmir/GeoNoise)). I currently live in London, United Kingdom. At the moment I work as an Senior Software Engineer at [Skyscanner](https://www.skyscanner.net/media/about-skyscanner). I have previously worked at [Badoo](https://corp.badoo.com) and [Coniq](http://coniq.com/) in London, and at Credit Suisse in Wrocław, Poland.
 
 # What are you focused in?
 
