@@ -15,11 +15,10 @@ kramdown:
 title: Guillermo Orellana
 description: May contain traces of sarcasm and siesta
 email: wiyarmir@gmail.com
-#favicon
+# favicon
 favicon: /favicon.png
 
-email: guillermo.orellana.ruiz@gmail.com
-#blog logo
+# blog logo
 logo: "/assets/images/df_logo.png"
 # blog cover
 cover: "/assets/images/oldstreet.jpg"

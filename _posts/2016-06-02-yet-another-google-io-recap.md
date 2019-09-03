@@ -2,11 +2,11 @@
 layout: post
 title: "#YAGIOR - Yet Another Google I/O Recap"
 date: 2016-06-02 22:38:06 +00:00
-categories: google
 author: Guillermo Orellana
 comments: true
 tags: google
 image: /assets/article_images/2016-06-01-yagior-yet-another-googleio-recap/googleio.jpg
+redirect_from: /google/2016/06/03/yet-another-google-io-recap
 ---
 
 **TL;DR:** It was my first time in Google I/O, my first time in the Bay Area, my first time in California, my first time in the US... And I came back with a very different opinion on all of them. 

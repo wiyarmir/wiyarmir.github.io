@@ -2,10 +2,10 @@
 layout: post
 title: "Integrating React Native in an existing application"
 date: 2016-07-05 22:37:40 +01:00
-categories: react-native
 author: Guillermo Orellana
 comments: true
 tags: react-native,android
+redirect_from: /react-native/2016/07/05/integrating-react-native-in-an-existing-application
 ---
 
 ***Updated 11/04/2017:* Added some of the API changes and updated the React Native version used in the article**

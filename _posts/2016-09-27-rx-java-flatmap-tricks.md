@@ -2,10 +2,10 @@
 layout: post
 title: "RxJava - FlatMap tricks"
 date: 2016-09-27 09:00:40 +01:00
-categories: rxjava
 author: Guillermo Orellana
 comments: true
 tags: rxjava,java
+redirect_from: /rxjava/2016/09/27/rx-java-flatmap-tricks
 ---
 
 Quick one: Have you ever had to convert one layer model to the next one, and iterate through all the child elements to convert them as well? Not saying there is something wrong with that, but with a bit of RxJava magic we can make it look so much cooler.

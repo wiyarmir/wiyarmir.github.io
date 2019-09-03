@@ -2,11 +2,13 @@
 layout: post
 title: "Avoiding the clean boilerplate: Welcome Project Lombok"
 date: 2016-10-17 14:00:40 +01:00
-categories: android
 author: Guillermo Orellana
 comments: true
 tags: android,lombok,clean
+redirect_from: /android/2016/10/17/avoiding-the-clean-boilerplate-welcome-project-lombok
 ---
+
+_This blogpost is from 2016. If you are reading this today, there are way better solutions than Lombok, for instance Kotlin_
 
 Looks like nowadays, clean is the trend. Clean eating, clean lifting, clean architecture...
 

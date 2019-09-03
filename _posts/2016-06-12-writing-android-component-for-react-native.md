@@ -2,10 +2,10 @@
 layout: post
 title: "Writing an Android component for React Native"
 date: 2016-06-12 15:37:40 +00:00
-categories: react-native
 author: Guillermo Orellana
 comments: true
 tags: react-native,android
+redirect_from: /react-native/2016/06/12/writing-android-component-for-react-native
 ---
 
 **(Updated 13/04/2017: Bumped to React Native 0.42.3 and updated code)**

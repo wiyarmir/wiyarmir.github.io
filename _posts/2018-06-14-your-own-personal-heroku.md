@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Your own personal Heroku"
-date:   2018-06-14 13:37:00 +01:00
-categories: kotlin
+title: "Your own personal Heroku"
+date: 2018-06-14 13:37:00 +01:00
 author: wiyarmir
 comments: true
+redirect_from: /kotlin/2018/06/14/your-own-personal-heroku
 ---
 
 I've just finished doing a talk at the [Milan Kotlin Community Conference](https://milan.kotlincommunityconf.com/) about a recent pet project of mine: [Keynotedex](https://keynotedex.wiyarmir.es/).

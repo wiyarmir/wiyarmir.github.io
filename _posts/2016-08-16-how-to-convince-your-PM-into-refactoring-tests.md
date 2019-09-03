@@ -2,10 +2,10 @@
 layout: post
 title: "How to convince your PM into refactoring tests"
 date: 2016-08-16 12:00:40 +01:00
-categories: testing
 author: Guillermo Orellana
 comments: true
 tags: testing,android
+redirect_from: /testing/2016/08/16/how-to-convince-your-PM-into-refactoring-tests
 ---
 
 I know, the two words your (Product Owner\|Product Manager\|Project Manager) hates the most, **tests** and **refactoring** together! Those don't burn points in the chart! Am I trying to make them have a heart attack? Well, not really. It all depends on how you pitch the idea to them.

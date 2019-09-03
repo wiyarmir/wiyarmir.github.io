@@ -2,12 +2,13 @@
 layout: post
 title:  "Testing Android's AlarmManager"
 date:   2015-09-24 10:41:06 +00:00
-categories: android
 author: Guillermo Orellana
 comments: true
 tags: android
+redirect_from: /android/2015/09/24/testing-android-alarmmanager 
 image: /assets/article_images/2015-09-24-testing-android-alarmmanager/clock.jpg
 ---
+
 When I joined Coniq, I had to maintain and extend an existing Android application, which I did not really understand deep enough to feel safe to make big changes that it needed. So I decided to put some scaffolding around in shape of tests, in case everything decided to fall down. One of the parts I found most difficult to deal with, was Android's `AlarmManager` related code.
 
 # What is AlarmManager?
