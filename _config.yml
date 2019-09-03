@@ -34,10 +34,6 @@ url: "https://guillermoorellana.es" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
 twitter_handle: '@wiyarmir'
-ga_tracking_id: 'UA-58206969-1'
-
-#fill in disqus shortname to use disqus
-disqus: wiyarmir
 
 # social icons and sharing options
 social:
