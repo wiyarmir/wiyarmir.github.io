@@ -1,10 +1,7 @@
 ---
-layout: page
-title: About Guillermo Orellana
-permalink: /about/
+layout: index
+redirect_from: "/about/"
 ---
-
-# Who are you anyway?
 
 I am Guillermo, and I was born in Lucena, Spain. I have a Bachelor's Degree in Telecommunications (having received honours in [my thesis](https://github.com/wiyarmir/GeoNoise)). I currently live in London, United Kingdom. At the moment I am funemployed. I have previously worked at [Skyscanner](https://www.skyscanner.net/media/about-skyscanner), [Badoo](https://corp.badoo.com) and [Coniq](http://coniq.com/) in London, and at Credit Suisse in Wrocław, Poland.
 
