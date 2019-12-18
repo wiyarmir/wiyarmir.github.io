@@ -1,12 +1,10 @@
----------
+---
 layout: post
 title: "Maintaining and restoring window arrangements in MacOS"
 date: 2019-12-18 13:37:00 +01:00
 author: wiyarmir
 comments: true
----------
-
-
+---
 
 # Install Homebrew
 
