@@ -6,6 +6,8 @@ author: wiyarmir
 comments: true
 ---
 
+Frustrated about your MacOS forgetting all your beautiful screen arrangements? Dealing with the neck pain of so much head tilting searching for where the screen settings are? This page is for you.
+
 # Install Homebrew
 
 Go to https://brew.sh/ and follow instructions
