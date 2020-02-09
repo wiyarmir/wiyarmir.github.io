@@ -3,7 +3,7 @@ layout: index
 redirect_from: "/about/"
 ---
 
-I am Guillermo, and I was born in Lucena, Spain. I have a Bachelor's Degree in Telecommunications (having received honours in [my thesis](https://github.com/wiyarmir/GeoNoise)). I currently live in London, United Kingdom. At the moment I am funemployed. I have previously worked at [Skyscanner](https://www.skyscanner.net/media/about-skyscanner), [Badoo](https://corp.badoo.com) and [Coniq](http://coniq.com/) in London, and at Credit Suisse in Wrocław, Poland.
+I am Guillermo, and I was born in Spain. I have a Bachelor's Degree in Telecommunications (having received honours in [my thesis](https://github.com/wiyarmir/GeoNoise)). I currently live in London, United Kingdom. At the moment I work for [Monzo](https://monzo.com), where we are building the best bank ever.. I have previously worked at [Skyscanner](https://www.skyscanner.net/media/about-skyscanner), [Badoo](https://corp.badoo.com) and [Coniq](http://coniq.com/) in London, and at [Credit Suisse](https://www.credit-suisse.com/microsites/careers-wroclaw/en.html) in Wrocław, Poland.
 
 # What are you focused in?
 
